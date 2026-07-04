@@ -24,3 +24,35 @@ const globalForPrisma = global as unknown as {
  export default prisma
 ```
 ---
+
+### heading...
+![](https://imgur.com/2leGb3a.png)
+
+```bash
+import prisma from "@/lib/prisma";
+import { NextRequest, NextResponse } from "next/server";
+
+
+export async function GET(request: NextRequest) {
+    try {
+
+        const startTime = Date.now();
+        const readData = await prisma.employee.findMany({
+            skip: 1,
+            take: 3,
+        });
+        const execTime = `${Date.now() - startTime} ms`;
+
+        return NextResponse.json(
+            {status: "success", executionTime: execTime, message: "Read data successfully", data: readData},
+            {status: 200}
+        )
+    } catch (error) {
+        return NextResponse.json(
+            {status: "failed", message: "Internal server problem"},
+            {status: 500}
+        )
+    }
+}
+```
+---
