@@ -1,7 +1,7 @@
 ## NextJS API---> Log, Time, Calculation
 
 
-### heading...
+### Configure Prisma Logging
 #### lib/prisma.ts
 ![](https://imgur.com/3g95Xkc.png)
 
@@ -25,7 +25,7 @@ const globalForPrisma = global as unknown as {
 ```
 ---
 
-### heading...
+### Calculate API Execution Time
 ![](https://imgur.com/2leGb3a.png)
 
 ```bash
